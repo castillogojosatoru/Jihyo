@@ -39,7 +39,7 @@ public class ActivityTwoClassMain {
                 
                 case 1:
                     int pili;
-                    System.out.println("POP OR PUSH? 1. POP. 2. PUSH.");
+                    System.out.println("POP OR PUSH?\n1. POP. 2. PUSH.");
                     pili = scn.nextInt();
                     if (pili == 1) {
                         stack.pop();
@@ -60,7 +60,7 @@ public class ActivityTwoClassMain {
                     break;
                 case 2:
                     int number;
-                    System.out.println("POP OR PUSH? 1. POP. 2. PUSH.");
+                    System.out.println("POP OR PUSH?\n1. POP. 2. PUSH.");
                     number = scn.nextInt();
                     if (number == 1) {
                         stack2.pop();
@@ -82,7 +82,7 @@ public class ActivityTwoClassMain {
                     }
                     break;
                 case 3:
-                    System.out.println("POP OR PUSH? 1. POP. 2. PUSH.");
+                    System.out.println("POP OR PUSH?\n1. POP. 2. PUSH.");
                     int numero;
                     numero = scn.nextInt();
                     if (numero == 1) {
@@ -116,7 +116,7 @@ public class ActivityTwoClassMain {
                     }
                     break;
                 case 4:
-                    System.out.println("POP OR PUSH? 1. POP. 2. PUSH.");
+                    System.out.println("POP OR PUSH?\n1. POP. 2. PUSH.");
                     int namber;
                     namber = scn.nextInt();
                     if (namber == 1) {
@@ -129,7 +129,7 @@ public class ActivityTwoClassMain {
                         bal = scn.nextInt();
                         stack4.push(bal);
                         stack4.display();
-                        System.out.println("ADD STACK COLLECTION TO ANOTHER STACK COLLECTION? 1. YES. 2. NO.");
+                        System.out.println("ADD STACK COLLECTION TO ANOTHER STACK COLLECTION?\n1. YES. 2. NO.");
                         int yot;
                         yot = scn.nextInt();
                         if (yot == 1) {
@@ -152,7 +152,7 @@ public class ActivityTwoClassMain {
                     break;
                 case 5:
                     int hehe;
-                    System.out.println("POP OR PUSH? 1. POP. 2. PUSH.");
+                    System.out.println("POP OR PUSH?\n1. POP. 2. PUSH.");
                     hehe = scn.nextInt();
                     if (hehe == 1) {
                         stack5.pop();
@@ -165,7 +165,7 @@ public class ActivityTwoClassMain {
                         stack5.push(haha);
                         stack5.display();
                         int yaya;
-                        System.out.println("PEEK BOTTOM OR TOP? 1. BOTTOM. 2. TOP. 0. Exit.");
+                        System.out.println("PEEK BOTTOM OR TOP?\n1. BOTTOM. 2. TOP. 0. Exit.");
                         yaya = scn.nextInt();
                         if (yaya == 1) {
                             stack5.peek();
