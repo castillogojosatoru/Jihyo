@@ -4,56 +4,58 @@
  */
 package ActivityTwo;
 
-import java.util.HashSet;
+import java.util.Stack;
 
 /**
  *
  * @author Rhodz
  */
-public class ActivityTwoClassTwo{
-     private int max;
-     private double[] Stack2;
-     private int top;
-
-     
-    public ActivityTwoClassTwo(int size) {
+public class ActivityTwoClassFour{
+    private int max;
+    private double[] Stack;
+    private int top;
+    Stack<Double> stacknew = new Stack<>();
+    public ActivityTwoClassFour(int size) {
         max = size;
-        Stack2 = new double[max];
+        Stack = new double[max];
         top = -1;
     }
-   public void push(double num) {
+    public void push(double num) {
         if (!isFull()) {
-            Stack2[++top] = num;
+            Stack[++top] = num;
         }
     }
     public double pop() {
         if (!isEmpty()) {
-            return Stack2[top--];
+            return Stack[top--];
         }
         else {
-            System.out.println("CAN'T POP STACK.");
+            System.out.println("STACK IS EMPTY.");
             return -1;
         }
     }
-    public void count() {
-        if (!isEmpty()) {
-                int sum = top + 1;
-                System.out.println("STACK ELEMENT: " +sum);
-            }
-        else {
-            System.out.println("CAN'T COUNT STACK.");
-        }
-    }
+    
     public void display() {
         if (!isEmpty()) {
             System.out.println("ELEMENTS OF STACK: ");
             for (int i = top; i >= 0; i--) {
-                System.out.println(Stack2[i] + " ");
+                System.out.println(Stack[i] + " ");
             }
-            System.out.println();
+            System.out.println(stacknew);
         }
         else {
             System.out.println("ELEMENTS OF STACK IS EMPTY.");
+        }
+    }
+    public void addstack() {
+        for (int i = 0; i <= top; i++) {
+            if (!isFull()) {
+                System.out.println("STACK ADDED TO ANOTHER STACK: " +Stack[i]);
+                stacknew.push(Stack[i]);
+            }
+            else {
+                System.out.println("STACK IS FULL.");
+            }
         }
     }
     public boolean isEmpty() {

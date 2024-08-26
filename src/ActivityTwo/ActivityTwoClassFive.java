@@ -4,51 +4,57 @@
  */
 package ActivityTwo;
 
-import java.util.HashSet;
-
 /**
  *
  * @author Rhodz
  */
-public class ActivityTwoClassTwo{
-     private int max;
-     private double[] Stack2;
-     private int top;
-
-     
-    public ActivityTwoClassTwo(int size) {
+public class ActivityTwoClassFive {
+    private int max;
+    private double[] Stack;
+    private int top;
+    
+    public ActivityTwoClassFive(int size) {
         max = size;
-        Stack2 = new double[max];
+        Stack = new double[max];
         top = -1;
     }
-   public void push(double num) {
+    public void push(double num) {
         if (!isFull()) {
-            Stack2[++top] = num;
+            Stack[++top] = num;
         }
     }
     public double pop() {
         if (!isEmpty()) {
-            return Stack2[top--];
+            return Stack[top--];
         }
         else {
-            System.out.println("CAN'T POP STACK.");
+            System.out.println("STACK IS EMPTY.");
             return -1;
         }
     }
-    public void count() {
+    public double peek() {
         if (!isEmpty()) {
-                int sum = top + 1;
-                System.out.println("STACK ELEMENT: " +sum);
-            }
+            return Stack[top];
+        }
         else {
-            System.out.println("CAN'T COUNT STACK.");
+            System.out.println("TOP IS EMPTY.");
+            return -1;
+        }
+    }
+    public double bot() {
+        if(!isEmpty()) {
+            return Stack[0];
+        }
+        else {
+            System.out.println("BOT IS EMPTY.");
+            return -1;
         }
     }
     public void display() {
         if (!isEmpty()) {
             System.out.println("ELEMENTS OF STACK: ");
             for (int i = top; i >= 0; i--) {
-                System.out.println(Stack2[i] + " ");
+                System.out.println(Stack[i] + " ");
             }
             System.out.println();
         }
@@ -56,6 +62,7 @@ public class ActivityTwoClassTwo{
             System.out.println("ELEMENTS OF STACK IS EMPTY.");
         }
     }
+    
     public boolean isEmpty() {
         return (top == -1);
     }

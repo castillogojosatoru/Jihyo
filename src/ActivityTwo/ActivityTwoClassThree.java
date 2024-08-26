@@ -10,45 +10,55 @@ import java.util.HashSet;
  *
  * @author Rhodz
  */
-public class ActivityTwoClassTwo{
-     private int max;
-     private double[] Stack2;
-     private int top;
-
-     
-    public ActivityTwoClassTwo(int size) {
+public class ActivityTwoClassThree {
+    private int max;
+    private double[] Stack1;
+    private int top;
+    
+    public ActivityTwoClassThree(int size) {
         max = size;
-        Stack2 = new double[max];
+        Stack1 = new double[max];
         top = -1;
     }
-   public void push(double num) {
+    public void push(double num) {
         if (!isFull()) {
-            Stack2[++top] = num;
+            Stack1[++top] = num;
         }
     }
     public double pop() {
         if (!isEmpty()) {
-            return Stack2[top--];
+            return Stack1[top--];
         }
         else {
             System.out.println("CAN'T POP STACK.");
             return -1;
         }
     }
-    public void count() {
-        if (!isEmpty()) {
-                int sum = top + 1;
-                System.out.println("STACK ELEMENT: " +sum);
+    public void removedup() {
+        HashSet <Double> set = new HashSet<>();
+        ActivityTwoClassThree remove = new ActivityTwoClassThree(max);
+        int newtop = -1;
+        boolean dup = false;
+        for (int i = 0; i <= top; i++) {
+            if(set.contains(Stack1[i])) {
+                System.out.println("Stack Duplicate removed.");
+                Stack1[++newtop] = Stack1[i];
+                top = newtop;
+                display();  
+                dup = true; 
             }
-        else {
-            System.out.println("CAN'T COUNT STACK.");
+            set.add(Stack1[i]);
+            remove.push(i);
+        }
+        if (dup == false) {
+            System.out.println("No Duplicate Stack detected.");      
         }
     }
     public void display() {
         if (!isEmpty()) {
             System.out.println("ELEMENTS OF STACK: ");
             for (int i = top; i >= 0; i--) {
-                System.out.println(Stack2[i] + " ");
+                System.out.println(Stack1[i] + " ");
             }
             System.out.println();
         }
