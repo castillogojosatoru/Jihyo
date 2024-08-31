@@ -25,6 +25,7 @@ public class ActivityTwoClassFive extends ActivityTwoClassFour {
             }
         }
     }
+    
     public void newloopstack() {
         if (isEmpty()) {
             System.out.println("STACK IS EMPTY.");

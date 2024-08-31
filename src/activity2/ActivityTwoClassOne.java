@@ -49,6 +49,7 @@ public class ActivityTwoClassOne {
             }
         }
     }
+    
     public boolean isEmpty() {
         return (top == -1);
     }

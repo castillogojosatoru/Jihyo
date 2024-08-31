@@ -25,7 +25,6 @@ public class ActivityTwoClassThree extends ActivityTwoClassTwo {
                 remove.add(Stack[i]);
                 Stack[++newtop] = Stack[i];
                 System.out.println("STACK DUPLICATED: " + Stack[i]);
-                
                 dup = true;
             }
         }
