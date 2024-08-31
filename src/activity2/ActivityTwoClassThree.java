@@ -21,14 +21,15 @@ public class ActivityTwoClassThree extends ActivityTwoClassTwo {
         int newtop = -1;
         boolean dup = false;
         for (int i = 0; i <= top; i++) {
-            if (remove.contains(Stack[i])) {
-                System.out.println("STACK DUPLICATED: " + Stack[i]);
+            if (!remove.contains(Stack[i])) {
+                remove.add(Stack[i]);
                 Stack[++newtop] = Stack[i];
-                top = newtop;
+                System.out.println("STACK DUPLICATED: " + Stack[i]);
+                
                 dup = true;
             }
-            remove.add(Stack[i]);
         }
+        top = newtop;
         if (dup == false) {
             System.out.println("NO DUPLICATE DETECTED.");
         }

@@ -49,17 +49,6 @@ public class ActivityTwoClassOne {
             }
         }
     }
-    public void newloopstack() {
-        if (isEmpty()) {
-            System.out.println("STACK IS EMPTY.");
-        }
-        else {
-            System.out.println("NEW STACK ELEMENT: ");
-            for (int i = 0; i <= top; i++) {
-                System.out.println(stacknew.get(i));
-            }
-        }
-    }
     public boolean isEmpty() {
         return (top == -1);
     }

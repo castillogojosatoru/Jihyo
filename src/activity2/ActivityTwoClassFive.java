@@ -25,4 +25,16 @@ public class ActivityTwoClassFive extends ActivityTwoClassFour {
             }
         }
     }
+    public void newloopstack() {
+        if (isEmpty()) {
+            System.out.println("STACK IS EMPTY.");
+        }
+        else {
+            System.out.println("NEW STACK ELEMENT: ");
+            int loopLimit = Math.min(top, stacknew.size() - 1);
+            for (int i = 0; i <= loopLimit; i++) {
+                System.out.println(stacknew.get(i));
+            }
+        }
+    }
 }
