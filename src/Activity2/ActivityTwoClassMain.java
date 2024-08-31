@@ -59,7 +59,7 @@ public class ActivityTwoClassMain {
                     stack.count();
                     break;
                 case 7:
-                    stack.remove();
+                    stack.removeDup();
                     break;
                 case 8:
                     stack.addStack();

@@ -17,19 +17,19 @@ public class ActivityTwoClassThree extends ActivityTwoClassTwo {
         super(Size);
     }
     
-    public void remove() {
-        Set<Double> removedup = new HashSet<>();
+    public void removeDup() {
+        Set<Double> remove = new HashSet<>();
         int newtop = -1;
         boolean dup = false;
         for (int i = 0; i <= top; i++) {
-            if (removedup.contains(Stack[i])) {
-                System.out.println("STACK DUPLICATED: " + Stack[i]);
+            if (!remove.contains(Stack[i])) {
+                remove.add(Stack[i]);
                 Stack[++newtop] = Stack[i];
-                top = newtop;
+                System.out.println("STACK DUPLICATED: " + Stack[i]);
                 dup = true;
             }
-            removedup.add(Stack[i]);
         }
+        top = newtop;
         if (dup == false) {
             System.out.println("NO DUPLICATE DETECTED.");
         }

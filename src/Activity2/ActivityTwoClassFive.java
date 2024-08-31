@@ -31,7 +31,8 @@ public class ActivityTwoClassFive extends ActivityTwoClassFour {
         }
         else {
             System.out.println("NEW STACK ELEMENT: ");
-            for (int i = 0; i <= top; i++) {
+            int loopLimit = Math.min(top, newstack.size() - 1);
+            for (int i = 0; i <= loopLimit; i++) {
                 System.out.println(newstack.get(i));
             }
         }
