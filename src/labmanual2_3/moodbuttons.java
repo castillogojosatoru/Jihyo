@@ -112,6 +112,7 @@ public class moodbuttons extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(138, 204, 213));
         jButton1.setForeground(new java.awt.Color(248, 248, 225));
         jButton1.setText("Happy");
+        jButton1.setToolTipText("Click this if you're happy.");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -121,6 +122,7 @@ public class moodbuttons extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(138, 204, 213));
         jButton2.setForeground(new java.awt.Color(248, 248, 225));
         jButton2.setText("Sad");
+        jButton2.setToolTipText("Click this if you're sad.");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -130,6 +132,7 @@ public class moodbuttons extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(138, 204, 213));
         jButton3.setForeground(new java.awt.Color(248, 248, 225));
         jButton3.setText("Angry");
+        jButton3.setToolTipText("Click this if you're angry.");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -139,6 +142,7 @@ public class moodbuttons extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(138, 204, 213));
         jButton4.setForeground(new java.awt.Color(248, 248, 225));
         jButton4.setText("Surprised");
+        jButton4.setToolTipText("Click this if you're surprised.");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);

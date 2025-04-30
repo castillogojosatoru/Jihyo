@@ -227,6 +227,7 @@
                   <Color blue="e1" green="f8" red="f8" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Happy"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click this if you&apos;re happy."/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -241,6 +242,7 @@
                   <Color blue="e1" green="f8" red="f8" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sad"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click this if you&apos;re sad."/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -255,6 +257,7 @@
                   <Color blue="e1" green="f8" red="f8" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Angry"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click this if you&apos;re angry."/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
@@ -269,6 +272,7 @@
                   <Color blue="e1" green="f8" red="f8" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Surprised"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click this if you&apos;re surprised."/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
