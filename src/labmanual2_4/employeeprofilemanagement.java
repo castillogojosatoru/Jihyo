@@ -4,6 +4,10 @@
  */
 package labmanual2_4;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JCheckBox;
+
 /**
  *
  * @author Admin
@@ -25,22 +29,365 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
+
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        saveButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
+        printButton = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel8 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jLabel9 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel10 = new javax.swing.JLabel();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(952, 742));
+        setSize(new java.awt.Dimension(0, 0));
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        jPanel1.setMinimumSize(new java.awt.Dimension(748, 552));
+        jPanel1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                jPanel1CaretPositionChanged(evt);
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            }
+        });
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jPanel2.setBackground(new java.awt.Color(103, 13, 47));
+        jPanel2.setPreferredSize(new java.awt.Dimension(250, 452));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
+
+        saveButton.setBackground(new java.awt.Color(165, 56, 96));
+        saveButton.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
+        saveButton.setForeground(new java.awt.Color(58, 5, 25));
+        saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(90, 80, 0, 98);
+        jPanel2.add(saveButton, gridBagConstraints);
+
+        deleteButton.setBackground(new java.awt.Color(165, 56, 96));
+        deleteButton.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(58, 5, 25));
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(27, 80, 0, 98);
+        jPanel2.add(deleteButton, gridBagConstraints);
+
+        updateButton.setBackground(new java.awt.Color(165, 56, 96));
+        updateButton.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
+        updateButton.setForeground(new java.awt.Color(56, 5, 25));
+        updateButton.setText("Update");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(27, 80, 0, 98);
+        jPanel2.add(updateButton, gridBagConstraints);
+
+        printButton.setBackground(new java.awt.Color(165, 56, 96));
+        printButton.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
+        printButton.setForeground(new java.awt.Color(56, 5, 25));
+        printButton.setText("Print");
+        printButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        printButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(27, 80, 339, 98);
+        jPanel2.add(printButton, gridBagConstraints);
+
+        jPanel1.add(jPanel2, java.awt.BorderLayout.LINE_START);
+
+        jPanel4.setBackground(new java.awt.Color(165, 56, 96));
+        jPanel4.setPreferredSize(new java.awt.Dimension(748, 140));
+        jPanel4.setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setFont(new java.awt.Font("Noto Serif KR", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(58, 5, 25));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("GMALL EMPLOYEE PROFILE FORM");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(40, 60, 0, 49);
+        jPanel4.add(jLabel1, gridBagConstraints);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/labmanual2_4/gmall.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 0);
+        jPanel4.add(jLabel2, gridBagConstraints);
+
+        jPanel1.add(jPanel4, java.awt.BorderLayout.PAGE_START);
+
+        jPanel5.setBackground(new java.awt.Color(239, 136, 173));
+        jPanel5.setLayout(new java.awt.GridBagLayout());
+
+        jPanel3.setBackground(new java.awt.Color(239, 136, 173));
+        jPanel3.setPreferredSize(new java.awt.Dimension(500, 573));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(58, 5, 25));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("First Name:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 290, 40));
+
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField2.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 290, 40));
+
+        jLabel5.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(58, 5, 25));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Middle Name:");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+
+        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField3.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3KeyTyped(evt);
+            }
+        });
+        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 80, 40));
+
+        jLabel6.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(58, 5, 25));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Will you work for the company?");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(58, 5, 25));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Last Name:");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(58, 5, 25));
+        jRadioButton1.setText("Male");
+        jPanel3.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(58, 5, 25));
+        jRadioButton2.setText("Female");
+        jPanel3.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(58, 5, 25));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Age:");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 40, -1));
+
+        jCheckBox1.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jCheckBox1.setForeground(new java.awt.Color(58, 5, 25));
+        jCheckBox1.setText("Single");
+        jPanel3.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, -1));
+
+        jCheckBox2.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jCheckBox2.setForeground(new java.awt.Color(58, 5, 25));
+        jCheckBox2.setText("Married");
+        jPanel3.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
+
+        jCheckBox3.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jCheckBox3.setForeground(new java.awt.Color(58, 5, 25));
+        jCheckBox3.setText("Widowed");
+        jPanel3.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(58, 5, 25));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Status:");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, -1));
+
+        jDateChooser1.setDateFormatString("MMMM dd, yyyy");
+        jPanel3.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 260, 30));
+
+        jLabel10.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(58, 5, 25));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Birth Date:");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
+
+        buttonGroup2.add(jRadioButton3);
+        jRadioButton3.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jRadioButton3.setForeground(new java.awt.Color(58, 5, 25));
+        jRadioButton3.setText("No");
+        jPanel3.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, -1, -1));
+
+        buttonGroup2.add(jRadioButton4);
+        jRadioButton4.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jRadioButton4.setForeground(new java.awt.Color(58, 5, 25));
+        jRadioButton4.setText("Yes");
+        jPanel3.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(58, 5, 25));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Gender:");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField4.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 290, 40));
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = -14;
+        gridBagConstraints.ipady = -97;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(31, 108, 32, 108);
+        jPanel5.add(jPanel3, gridBagConstraints);
+
+        jPanel1.add(jPanel5, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 426, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jPanel1CaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jPanel1CaretPositionChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1CaretPositionChanged
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        String firstName = jTextField1.getText();
+        String middleName = jTextField2.getText();
+        String lastName = jTextField3.getText();
+        int age = Integer.parseInt(jTextField4.getText());
+        String radioButton = "";
+        
+        if (jRadioButton1.isSelected()) {
+            radioButton = "Male";
+        }
+        else if (jRadioButton2.isSelected()) {
+            radioButton = "Female";
+        }
+        
+        String status;
+        JCheckBox[] checkbaks = {jCheckBox1, jCheckBox2, jCheckBox3};
+        StringBuilder sb = new StringBuilder();
+        
+        for (JCheckBox jcheckbox : checkbaks) {
+            if (jcheckbox.isSelected()) {
+                sb.append(jcheckbox.getText()).append("\n");
+            }
+        }
+        status = sb.toString();
+        
+        Date selectDate = jDateChooser1.getDate();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/YYYY");
+        String formattedDate = sdf.format(selectDate);
+        
+        String radioquestionButton = "";
+        
+        if (jRadioButton3.isSelected()) {
+            radioquestionButton = "Yes";
+        }
+        else if (jRadioButton4.isSelected()) {
+            radioquestionButton = "No";
+        }
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateButtonActionPerformed
+
+    private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_printButtonActionPerformed
+
+    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
+        char type = evt.getKeyChar();
+        
+        if (!Character.isDigit(type)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField3KeyTyped
 
     /**
      * @param args the command line arguments
@@ -78,5 +425,38 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton printButton;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 }

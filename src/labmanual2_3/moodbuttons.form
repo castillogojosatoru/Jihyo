@@ -224,7 +224,7 @@
                   <Color blue="d5" green="cc" red="8a" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e1" green="f8" red="f8" type="rgb"/>
+                  <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Happy"/>
                 <Property name="toolTipText" type="java.lang.String" value="Click this if you&apos;re happy."/>
@@ -239,7 +239,7 @@
                   <Color blue="d5" green="cc" red="8a" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e1" green="f8" red="f8" type="rgb"/>
+                  <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sad"/>
                 <Property name="toolTipText" type="java.lang.String" value="Click this if you&apos;re sad."/>
@@ -254,7 +254,7 @@
                   <Color blue="d5" green="cc" red="8a" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e1" green="f8" red="f8" type="rgb"/>
+                  <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Angry"/>
                 <Property name="toolTipText" type="java.lang.String" value="Click this if you&apos;re angry."/>
@@ -269,7 +269,7 @@
                   <Color blue="d5" green="cc" red="8a" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e1" green="f8" red="f8" type="rgb"/>
+                  <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Surprised"/>
                 <Property name="toolTipText" type="java.lang.String" value="Click this if you&apos;re surprised."/>
@@ -284,7 +284,7 @@
                   <Color blue="d5" green="cc" red="8a" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e1" green="f8" red="f8" type="rgb"/>
+                  <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sleepy"/>
               </Properties>

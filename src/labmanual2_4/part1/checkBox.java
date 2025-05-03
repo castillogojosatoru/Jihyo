@@ -18,7 +18,7 @@ public class checkBox extends javax.swing.JFrame {
     public checkBox() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,7 +40,7 @@ public class checkBox extends javax.swing.JFrame {
 
         jCheckBox1.setText("Mango");
 
-        jCheckBox2.setText("Banan");
+        jCheckBox2.setText("Banana");
 
         jCheckBox3.setText("Avocado");
 
@@ -95,19 +95,24 @@ public class checkBox extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String[] chkbx = {"Mango", "Banana", "Avocado", "Kamunggay"};
+        JCheckBox[] chkbx = {jCheckBox1, jCheckBox2, jCheckBox3, jCheckBox4};
         StringBuilder stringbuilder = new StringBuilder();
-        JCheckBox cb = new JCheckBox();
-//        JCheckBox[] checkboxes = {cbMango, cbBanana, cbAvocado, cbKamunggay};
-
-            if (cb.isSelected()) {
-                stringbuilder.append(cb.getText()).append("\n");
+        tsekbaks tsek = new tsekbaks();
+        
+        for (JCheckBox jCheckBox : chkbx) {
+            if (jCheckBox.isSelected()) {
+                
+                stringbuilder.append(jCheckBox.getText()).append("\n");
             }
-
+        }
+        tsek.yawa.setText(stringbuilder.toString());
         jTextArea1.setText(stringbuilder.toString());
+        
+        tsek.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
