@@ -7,6 +7,8 @@ package labmanual2_4;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,13 +16,18 @@ import javax.swing.JCheckBox;
  */
 public class employeeprofilemanagement extends javax.swing.JFrame {
 
-    /**
-     * Creates new form employeeprofilemanagement
-     */
+    employeeTable employeetable = new employeeTable();
+    deleteTable deletetable = new deleteTable();
+    printTable printtable = new printTable();
+    
     public employeeprofilemanagement() {
         initComponents();
+        employeetable.jTable1.setModel(model);
+        deletetable.jTable1.setModel(model);
+        printtable.jTable1.setModel(model);
     }
-
+    DefaultTableModel model = new DefaultTableModel(new Object[] {"First Name", "Middle Name", "Last Name", "Age", "Gender", "Language", "Birth Date"}, 0);
+    int editingRow = -1;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,8 +55,6 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -60,10 +65,9 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel10 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1920, 1080));
@@ -207,22 +211,6 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
         jLabel5.setText("Middle Name:");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField3KeyTyped(evt);
-            }
-        });
-        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 80, 40));
-
-        jLabel6.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(58, 5, 25));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Will you work for the company?");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
-
         jLabel7.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(58, 5, 25));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -249,24 +237,24 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
 
         jCheckBox1.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(58, 5, 25));
-        jCheckBox1.setText("Single");
+        jCheckBox1.setText("English");
         jPanel3.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, -1));
 
         jCheckBox2.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
         jCheckBox2.setForeground(new java.awt.Color(58, 5, 25));
-        jCheckBox2.setText("Married");
+        jCheckBox2.setText("Bisaya");
         jPanel3.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
 
         jCheckBox3.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
         jCheckBox3.setForeground(new java.awt.Color(58, 5, 25));
-        jCheckBox3.setText("Widowed");
+        jCheckBox3.setText("Tagalog");
         jPanel3.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(58, 5, 25));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Status:");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, -1));
+        jLabel9.setText("Language:");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, -1, -1));
 
         jDateChooser1.setDateFormatString("MMMM dd, yyyy");
         jPanel3.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 260, 30));
@@ -276,18 +264,6 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Birth Date:");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
-
-        buttonGroup2.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(58, 5, 25));
-        jRadioButton3.setText("No");
-        jPanel3.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, -1, -1));
-
-        buttonGroup2.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
-        jRadioButton4.setForeground(new java.awt.Color(58, 5, 25));
-        jRadioButton4.setText("Yes");
-        jPanel3.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Noto Serif KR", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(58, 5, 25));
@@ -299,6 +275,9 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
         jTextField4.setFont(new java.awt.Font("Noto Serif KR", 0, 12)); // NOI18N
         jTextField4.setForeground(new java.awt.Color(0, 0, 0));
         jPanel3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 290, 40));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100+" }));
+        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 100, 40));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -325,69 +304,89 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void clearFormFields() {
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField4.setText("");
+        jComboBox1.setSelectedIndex(0);
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+        jCheckBox1.setSelected(false);
+        jCheckBox2.setSelected(false);
+        jCheckBox3.setSelected(false);
+        jDateChooser1.setDate(null);
+    }
+    
     private void jPanel1CaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jPanel1CaretPositionChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel1CaretPositionChanged
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        String firstName = jTextField1.getText();
-        String middleName = jTextField2.getText();
-        String lastName = jTextField3.getText();
-        int age = Integer.parseInt(jTextField4.getText());
-        String radioButton = "";
+        try {
+            String age;
+            String radioButton = "";
         
-        if (jRadioButton1.isSelected()) {
-            radioButton = "Male";
-        }
-        else if (jRadioButton2.isSelected()) {
-            radioButton = "Female";
-        }
+            model = (DefaultTableModel) employeetable.jTable1.getModel();
+            employeetable.jTable1.setModel(model);
         
-        String status;
-        JCheckBox[] checkbaks = {jCheckBox1, jCheckBox2, jCheckBox3};
-        StringBuilder sb = new StringBuilder();
-        
-        for (JCheckBox jcheckbox : checkbaks) {
-            if (jcheckbox.isSelected()) {
-                sb.append(jcheckbox.getText()).append("\n");
+            if (jRadioButton1.isSelected()) {
+                radioButton = "Male";
             }
-        }
-        status = sb.toString();
+            else if (jRadioButton2.isSelected()) {
+                radioButton = "Female";
+            }
         
-        Date selectDate = jDateChooser1.getDate();
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/YYYY");
-        String formattedDate = sdf.format(selectDate);
+            String language;
+            JCheckBox[] checkbaks = {jCheckBox1, jCheckBox2, jCheckBox3};
+            StringBuilder sb = new StringBuilder();
         
-        String radioquestionButton = "";
+            for (JCheckBox jcheckbox : checkbaks) {
+                if (jcheckbox.isSelected()) {
+                sb.append(jcheckbox.getText()).append("\n");
+                }
+            }
+            language = sb.toString();
+            age = sb.toString();
         
-        if (jRadioButton3.isSelected()) {
-            radioquestionButton = "Yes";
-        }
-        else if (jRadioButton4.isSelected()) {
-            radioquestionButton = "No";
+            Date selectDate = jDateChooser1.getDate();
+            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/YYYY");
+            String formattedDate = sdf.format(selectDate);
+        
+            Object[] rowDate = new Object[] {jTextField1.getText(), jTextField2.getText(), jTextField4.getText(), jComboBox1.getSelectedItem(), radioButton, language, formattedDate};
+        
+            if (editingRow >= 0) {
+                model.setValueAt(jTextField1.getText(), editingRow, 0);
+                model.setValueAt(jTextField2.getText(), editingRow, 1);
+                model.setValueAt(jTextField4.getText(), editingRow, 2);
+                model.setValueAt(jComboBox1.getSelectedItem(), editingRow, 3);
+                model.setValueAt(radioButton, editingRow, 4);
+                model.setValueAt(language, editingRow, 5);
+                model.setValueAt(formattedDate, editingRow, 6);
+                editingRow = -1;
+            }
+            else {
+                model.addRow(new Object[] {jTextField1.getText(), jTextField2.getText(), jTextField4.getText(), jComboBox1.getSelectedItem(), radioButton, language, formattedDate});
+            }
+            clearFormFields();
+            JOptionPane.showMessageDialog(this, "Info added successfully.", "Info added", JOptionPane.INFORMATION_MESSAGE);
+        } 
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please fill up the fields.", "Fill up error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        // TODO add your handling code here:
+        deletetable.setVisible(true);
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-        // TODO add your handling code here:
+        employeetable.setVisible(true);
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-        // TODO add your handling code here:
+        printtable.setVisible(true);
     }//GEN-LAST:event_printButtonActionPerformed
-
-    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
-        char type = evt.getKeyChar();
-        
-        if (!Character.isDigit(type)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_jTextField3KeyTyped
 
     /**
      * @param args the command line arguments
@@ -431,6 +430,7 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JComboBox<String> jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -438,7 +438,6 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -449,11 +448,8 @@ public class employeeprofilemanagement extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JButton printButton;
     private javax.swing.JButton saveButton;
