@@ -6,29 +6,31 @@ package labtask3;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
  * @author Admin
  */
 public class attendanceForm extends javax.swing.JFrame {
+    
 
-    DefaultTableModel model;
+    DefaultTableModel model2;
+    
     public attendanceForm() {
         initComponents();
-        model = new DefaultTableModel(new Object[] {"Full Name", "Gender", "Program", "Present", "Absent"}, 0);
-        jTable1.setModel(model);
-        deleteform.jTable1.setModel(model);
     }
     
-    public void setTableModel(DefaultTableModel sharedModel) {
-        this.model = sharedModel;
-        jTable1.setModel(model);
+    public void setTableModel(DefaultTableModel sharedModel, DefaultTableModel sharedModel2) {
+        this.model2 = sharedModel;
+        jTable1.setModel(this.model2);
+        jTable1.revalidate();
+        jTable1.repaint();
     }
     
     int editingRow = -1;
     
-    deleteForm deleteform = new deleteForm();
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -192,17 +194,17 @@ public class attendanceForm extends javax.swing.JFrame {
             int absent = 0;
             
             if (editingRow >= 0) {
-                Object presentValue = model.getValueAt(editingRow, 3);
-                Object absentValue = model.getValueAt(editingRow, 4);
+                Object presentValue = model2.getValueAt(editingRow, 3);
+                Object absentValue = model2.getValueAt(editingRow, 4);
                 present = (presentValue != null && !presentValue.toString().isBlank() ? Integer.parseInt(presentValue.toString()) : 0);
                 absent = (absentValue != null && !absentValue.toString().isBlank() ? Integer.parseInt(absentValue.toString()) : 0);;
                 if (presentButton.isSelected()) {
                     present++;
-                    model.setValueAt(present, editingRow, 3);
+                    model2.setValueAt(present, editingRow, 3);
                 }
                     else if (absentButton.isSelected()) {
                     absent++;
-                    model.setValueAt(absent, editingRow, 4);
+                    model2.setValueAt(absent, editingRow, 4);
                 }
                 else {
                     JOptionPane.showMessageDialog(this, "Please select between the two buttons first for attendance.");
@@ -237,11 +239,11 @@ public class attendanceForm extends javax.swing.JFrame {
     }//GEN-LAST:event_fullNameTextFieldKeyReleased
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        model = (DefaultTableModel) jTable1.getModel();
+        model2 = (DefaultTableModel) jTable1.getModel();
         editingRow = jTable1.getSelectedRow();
         if (editingRow != -1) {
             try {
-                Object fullName = model.getValueAt(editingRow, 0);
+                Object fullName = model2.getValueAt(editingRow, 0);
                 fullNameTextField.setText(fullName != null ? fullName.toString() : "");
                 presentButton.setSelected(false);
                 absentButton.setSelected(false);

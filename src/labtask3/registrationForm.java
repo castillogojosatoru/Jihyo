@@ -15,20 +15,28 @@ public class registrationForm extends javax.swing.JFrame {
 
     
     public registrationForm() {
-        initComponents();
+        initComponents();   
+        
+        updateform.setTableModel(model, model2);
+        deleteform.setTableModel(model, model2);
+        attendanceform.setTableModel(model, model2);
+        studentlistform.setTableModel(model, model2);
+        
         updateform.jTable1.setModel(model);
         deleteform.jTable1.setModel(model);
-        attendanceform.jTable1.setModel(model);
-        studentlistform.jTable1.setModel(model);
+        attendanceform.jTable1.setModel(model2);
+        studentlistform.jTable1.setModel(model2);
         
         model.addTableModelListener(e -> toggleButtons());
+        toggleButtons();
     }
     updateForm updateform = new updateForm();
     deleteForm deleteform = new deleteForm();
     attendanceForm attendanceform = new attendanceForm();
     studentListForm studentlistform = new studentListForm();
     
-    DefaultTableModel model = new DefaultTableModel(new Object[] {"Full Name", "Gender", "Program", "Present", "Absent"}, 0);
+    DefaultTableModel model = new DefaultTableModel(new Object[] {"Full Name", "Gender", "Program"}, 0);
+    DefaultTableModel model2 = new DefaultTableModel(new Object[] {"Full Name", "Gender", "Program", "Present", "Absent"}, 0);
     
     
     int editingRow = -1;
@@ -279,10 +287,7 @@ public class registrationForm extends javax.swing.JFrame {
             return;
         }
         
-        try {
-            model = (DefaultTableModel) updateform.jTable1.getModel();
-            updateform.jTable1.setModel(model);
-            
+        try { 
             String radioButton = "";
             
             if (maleRButton.isSelected()) {
@@ -296,16 +301,20 @@ public class registrationForm extends javax.swing.JFrame {
                 return;
             }
             
-            Object[] rowDate = new Object[] {fullNameTextField.getText(), radioButton, programComboBox.getSelectedItem()};
+//            Object[] rowDate = new Object[] {fullNameTextField.getText(), radioButton, programComboBox.getSelectedItem()};
             
             if (editingRow >= 0) {
                 model.setValueAt(fullNameTextField.getText(), editingRow, 0);
+                model2.setValueAt(fullNameTextField.getText(), editingRow, 0);
                 model.setValueAt(radioButton, editingRow, 1);
+                model2.setValueAt(radioButton, editingRow, 1);
                 model.setValueAt(programComboBox.getSelectedItem(), editingRow, 2);
+                model2.setValueAt(programComboBox.getSelectedItem(), editingRow, 2);
                 editingRow = -1;
             }
             else {
                 model.addRow(new Object[] {fullNameTextField.getText(), radioButton, programComboBox.getSelectedItem()});
+                model2.addRow(new Object[] {fullNameTextField.getText(), radioButton, programComboBox.getSelectedItem()});
             }
             updateButton.setEnabled(true);
             deleteButton.setEnabled(true);

@@ -14,19 +14,20 @@ import javax.swing.table.DefaultTableModel;
 public class deleteForm extends javax.swing.JFrame {
 
     DefaultTableModel model;
+    DefaultTableModel model2;
     
     public deleteForm() {
         initComponents();
-        model = new DefaultTableModel(new Object[] {"Full Name", "Gender", "Program", "Present", "Absent"}, 0);
-        updateform.jTable1.setModel(model);
     }
     
-    public void setTableModel(DefaultTableModel sharedModel) {
+    public void setTableModel(DefaultTableModel sharedModel, DefaultTableModel sharedModel2) {
         this.model = sharedModel;
-        jTable1.setModel(model);
+        this.model2 = sharedModel2;
+        jTable1.setModel(this.model);
+        jTable1.revalidate();
+        jTable1.repaint();
     }
     
-    updateForm updateform = new updateForm();
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -115,12 +116,13 @@ public class deleteForm extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        model = (DefaultTableModel) jTable1.getModel();
+        int selectedRow = jTable1.getSelectedRow();
         
-        if (jTable1.getSelectedRowCount() == 1) {
+        if (selectedRow != -1) {
             int con = JOptionPane.showConfirmDialog(this, "Proceed to delete this?");
                 if (con == 0) {
-                    model.removeRow(jTable1.getSelectedRow());
+                    model.removeRow(selectedRow);
+                    model2.removeRow(selectedRow);
                     JOptionPane.showMessageDialog(this, "Info deleted.");
                 }
                 else if (con == 1) {

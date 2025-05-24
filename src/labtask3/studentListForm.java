@@ -6,26 +6,29 @@ package labtask3;
 
 import javax.swing.table.DefaultTableModel;
 
+
 /**
  *
  * @author Admin
  */
 public class studentListForm extends javax.swing.JFrame {
     
-    DefaultTableModel model;
+
+    DefaultTableModel model2;
     
     public studentListForm() {
         initComponents();
-        model = new DefaultTableModel(new Object[] {"Full Name", "Gender", "Program", "Present", "Absent"}, 0);
-        attendanceform.jTable1.setModel(model);
     }
     
-    public void setTableModel(DefaultTableModel sharedModel) {
-        this.model = sharedModel;
-        jTable1.setModel(model);
+    public void setTableModel(DefaultTableModel sharedModel, DefaultTableModel sharedModel2) {
+
+        this.model2 = sharedModel2;
+        jTable1.setModel(this.model2);
+        jTable1.revalidate();
+        jTable1.repaint();
     }
     
-    attendanceForm attendanceform = new attendanceForm();
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

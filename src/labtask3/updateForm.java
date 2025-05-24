@@ -13,20 +13,21 @@ import javax.swing.table.DefaultTableModel;
  */
 public class updateForm extends javax.swing.JFrame {
     DefaultTableModel model;
-    
+    DefaultTableModel model2;
     
     public updateForm() {
         initComponents();
-        model = new DefaultTableModel(new Object[] {"Full Name", "Gender", "Program", "Present", "Absent"}, 0);
-        jTable1.setModel(model);
-        
     }
+    
     
     int editingRow = -1;
     
-    public void setTableModel(DefaultTableModel sharedModel) {
+    public void setTableModel(DefaultTableModel sharedModel, DefaultTableModel sharedModel2) {
         this.model = sharedModel;
-        jTable1.setModel(model);
+        this.model2 = sharedModel2;
+        jTable1.setModel(this.model);
+        jTable1.revalidate();
+        jTable1.repaint();
     }
     
     public void clearFields() {
@@ -221,8 +222,6 @@ public class updateForm extends javax.swing.JFrame {
         }
         try {
             String radioButton = "";
-            model = (DefaultTableModel) jTable1.getModel();
-            jTable1.setModel(model);
         
             if (maleRButton.isSelected()) {
                 radioButton = "Male";
@@ -235,14 +234,17 @@ public class updateForm extends javax.swing.JFrame {
                 return;
             }
         
-            Object[] rowDate = new Object[] {fullNameTextField.getText(), radioButton, programComboBox.getSelectedItem()};
+//            Object[] rowDate = new Object[] {fullNameTextField.getText(), radioButton, programComboBox.getSelectedItem()};
         
             JOptionPane.showMessageDialog(this, "Student info updated successfully.", "Info updated", JOptionPane.INFORMATION_MESSAGE);
             
             if (editingRow >= 0) {
                 model.setValueAt(fullNameTextField.getText(), editingRow, 0);
+                model2.setValueAt(fullNameTextField.getText(), editingRow, 0);
                 model.setValueAt(radioButton, editingRow, 1);
+                model2.setValueAt(radioButton, editingRow, 1);
                 model.setValueAt(programComboBox.getSelectedItem(), editingRow, 2);
+                model2.setValueAt(programComboBox.getSelectedItem(), editingRow, 2);
                 editingRow = -1;
             }
             else {
@@ -267,7 +269,6 @@ public class updateForm extends javax.swing.JFrame {
  
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
 
-        model = (DefaultTableModel) jTable1.getModel();
         int selectedRow = jTable1.getSelectedRow();
         if (selectedRow != -1) {
             try {
